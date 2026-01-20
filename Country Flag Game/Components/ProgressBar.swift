@@ -8,11 +8,22 @@
 import SwiftUI
 
 struct ProgressBar: View {
+    var progress:CGFloat
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack(alignment: .leading) {
+            Rectangle()
+                .frame(maxWidth: 350, maxHeight: 4)
+                .foregroundColor(.gray)
+                .cornerRadius(10)
+            Rectangle()
+                .frame(maxWidth: progress, maxHeight: 4)
+                .foregroundColor(.yellow)
+                .cornerRadius(10)
+            
+        }
     }
 }
 
 #Preview {
-    ProgressBar()
+    ProgressBar(progress: 50)
 }
